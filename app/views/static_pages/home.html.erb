@@ -1,11 +1,21 @@
-<% provide(:title, 'Home') %>  
-<div class="center jumbotron">
+<% provide(:title, t(:home)) %>  
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+    </aside>
+    <%= link_to t(:word_list), '#', class: "btn btn-lg btn-primary" %>
+    <%= link_to t(:lesson), '#', class: "btn btn-lg btn-primary" %>
+  </div>
+<% else %>
+  <div class="center jumbotron">
     <h1>Welcome to the ELS application</h1>
-
     <h2>
       This is the home page for the E learning system application.
     </h2>
+    <%= link_to t(:signup), signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
 
-    <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
-</div>
-
+<% end %>

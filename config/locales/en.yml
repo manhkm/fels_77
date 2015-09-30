@@ -21,3 +21,38 @@
 
 en:
   hello: "Hello world"
+  please_login: "Please log in."
+  invalid_combination: "Invalid email/password combination"
+  welcome: "Welcome to the E Learning system!" 
+  profile_updated: "Profile updated"
+  user_deleted: "User deleted"
+  title: "E Learning System"
+  about: "About"
+  contact: "Contact"
+  home: "Home"
+  help: "Help"
+  users: "Users"
+  profile: "Profile"
+  settings: "Settings"
+  logout: "Log out"
+  login: "Log in"
+  signup: "Sign up now!"
+  view_profile: "view my profile"
+  word_list: "Word list"
+  lesson: "Lesson"
+  delete: "Delete"
+  you_sure: "You sure?"
+  creat_acc: "Create my account"
+  signup_title: "signup"
+  all_user: "All users"
+  edit_user: "Edit user"
+  save_change: "Save changes"
+  user:
+    label:
+      name: "Name"
+      email: "Email"
+      password : "Password"
+      password_confirmation : "Confirmation"
+  session:
+    label:
+      remember_me: "Remember me on this computer"
