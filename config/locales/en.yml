@@ -56,3 +56,7 @@ en:
   session:
     label:
       remember_me: "Remember me on this computer"
+  following: "Following"
+  followers: "Followers"
+  follow:  "Follow"
+  unfollow: "Unfollow"
