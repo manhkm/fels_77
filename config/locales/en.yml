@@ -60,3 +60,14 @@ en:
   followers: "Followers"
   follow:  "Follow"
   unfollow: "Unfollow"
+  creat_word: "creat word"
+  create_word_success: "creat word success"
+  word:
+    label:
+      content_jp: "japanese content"
+      correct_answer: "correct answer"
+  answer: "answer"
+  word_deleted: "word deleted"
+  all_word: "All word"
+  please_contact_admin: "please contact admin"
+  remove: "Remove"
