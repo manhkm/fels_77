@@ -8,11 +8,12 @@ class WordsController < ApplicationController
   def show
     @word = Word.find params[:id]
     @answers = @word.answers
+    @user_word = current_user.user_words.build 
   end
 
   def new
     @word = Word.new
-    3.times { @word.answers.build }
+    4.times { @word.answers.build }
   end
 
   def create

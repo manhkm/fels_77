@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
+  has_many :user_words, dependent: :destroy
   has_many :active_relationships,  class_name:  "Relationship",
                                    foreign_key: "follower_id",
                                    dependent:   :destroy
@@ -20,7 +21,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns the hash digest of the given string.
-  def User.digest(string)
+  def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
@@ -38,7 +39,7 @@ class User < ActiveRecord::Base
   end
   
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
+  def authenticated? remember_token
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
@@ -49,17 +50,33 @@ class User < ActiveRecord::Base
   end
 
   # Follows a user.
-  def follow(other_user)
+  def follow other_user
     active_relationships.create followed_id: other_user.id
   end
 
   # Unfollows a user.
-  def unfollow(other_user)
+  def unfollow other_user
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
 
   # Returns true if the current user is following the other user.
-  def following?(other_user)
+  def following? other_user
     following.include? other_user
   end
+
+  # Learned a word
+  def learn word
+    self.user_words.create word_id: word.id
+  end
+
+  # unlearned a word
+  def unlearn word
+    self.user_words.find_by(word_id: word.id).destroy
+  end
+
+  # Returns true if the current user is learned word.
+  def learned? word
+    return true unless self.user_words.find_by(word_id: word.id).nil?
+  end
+
 end
