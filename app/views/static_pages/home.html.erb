@@ -9,7 +9,11 @@
         <%= render 'shared/stats' %>
       </section>
     </aside>
-    <%= link_to t(:word_list), words_path, class: "btn btn-lg btn-primary" %>
+    <% if current_user.admin?%>
+      <%= link_to t(:word_list), admin_words_path, class: "btn btn-lg btn-primary" %>
+    <% else %>
+      <%= link_to t(:word_list), words_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
     <%= link_to t(:lesson), '#', class: "btn btn-lg btn-primary" %>
   </div>
 <% else %>
