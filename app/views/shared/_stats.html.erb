@@ -12,4 +12,10 @@
     </strong>
     <%= t :followers%>
   <%end %>
+  <%= link_to '#' do %>
+    <strong id="followers" class="stat">
+      <%= @user.UserWords.count %>
+    </strong>
+    <%= t :has_learn_words%>
+  <% end %>
 </div>

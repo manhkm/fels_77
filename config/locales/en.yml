@@ -71,3 +71,7 @@ en:
   all_word: "All word"
   please_contact_admin: "please contact admin"
   remove: "Remove"
+  has_learn_words: "words has learned"
+  hasnt_learn_words: "words unsuccess learned"
+  learned: "learned"
+  unlearned: "unlearned"

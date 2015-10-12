@@ -31,3 +31,7 @@ followers.each { |follower| follower.follow(user) }
     Answer.create(word_id: word.id, content: answer_1)
   end
 end
+
+user = users[2..10]
+words = Word.all
+user.each { |u| u.learn words.first}
