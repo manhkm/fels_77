@@ -21,9 +21,16 @@ followers = users[3..8]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
+
+10.times do |n|
+  content = Faker::Lorem.sentence(5)
+  name = Faker::Lorem.sentence(2)
+  Category.create(name: name, content: content)
+end
+
 100.times do |n|
   content_jp  = Faker::Lorem.word
-  word = Word.create(content_jp: content_jp)
+  word = Word.create(content_jp: content_jp, category_id: Category.all[rand 10].id)
   answer_1 = Faker::Lorem.word
   Answer.create(word_id: word.id, content: answer_1, correct_answer: true)
   3.times do |n|

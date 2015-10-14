@@ -1,7 +1,7 @@
 class CreateAnswers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
-      t.integer :word_id
+      t.references :word, index: true, foreign_key: true
       t.text :content
       t.boolean :correct_answer
 

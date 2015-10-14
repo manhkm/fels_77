@@ -2,8 +2,18 @@ class WordsController < ApplicationController
   before_action :admin_user,     only: [:create, :destroy]
   
   def index
-    @search = Word.search(params[:q])
-    @words = @search.result.paginate page: params[:page]
+    @filterrific = initialize_filterrific(
+      Word,
+      params[:filterrific],
+      select_options: {
+        with_category_id: Category.options_for_select
+      }
+    ) or return
+    @words = @filterrific.find.page params[:page]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

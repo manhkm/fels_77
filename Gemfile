@@ -61,4 +61,5 @@ group :production do
   gem 'puma'
 end
 gem 'ransack'
+gem 'filterrific'
 
