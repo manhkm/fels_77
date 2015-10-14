@@ -3,11 +3,18 @@
 <%= link_to t(:creat_word), admin_words_path, class: "btn btn-lg btn-primary" %>
 <% end %>
 <h1>All words</h1>
-<div>
-  <%= sort_link @search, :content_jp, t(:sort_by_name)%>
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Category
+    <%= f.select(
+      :with_category_id,
+      @filterrific.select_options[:with_category_id],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+<% end %>
+<div id="filterrific_results">
+  <ul class="words">
+    <%= render(partial:'word',locals: {words: @words})%>
+  </ul>
 </div>
-<%= will_paginate %>
-<ul class="words">
-  <%= render @words %>
-</ul>
-<%= will_paginate %>
