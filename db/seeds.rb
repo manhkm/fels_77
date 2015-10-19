@@ -39,6 +39,14 @@ end
   end
 end
 
+categories = Category.all
+30.times do
+  categories.each do |category|
+    keyword = Faker::Lorem.word
+    category.words.create keyword: keyword
+  end
+end
+
 user = users[2..10]
 words = Word.all
 user.each { |u| u.learn words.first}
