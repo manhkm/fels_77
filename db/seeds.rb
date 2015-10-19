@@ -4,7 +4,7 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: true)
 
-9.times do |n|
+99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -28,9 +28,9 @@ followers.each { |follower| follower.follow(user) }
   Category.create(name: name, content: content)
 end
 
-100.times do |n|
+1000.times do |n|
   content_jp  = Faker::Lorem.word
-  word = Word.create(content_jp: content_jp, category_id: Category.all[rand 10].id)
+  word = Word.create(content_jp: content_jp, category_id: Category.all[(1..9).to_a.shuffle.first].id)
   answer_1 = Faker::Lorem.word
   Answer.create(word_id: word.id, content: answer_1, correct_answer: true)
   3.times do |n|

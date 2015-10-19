@@ -15,6 +15,8 @@
 <% end %>
 <div id="filterrific_results">
   <ul class="words">
-    <%= render(partial:'word',locals: {words: @words})%>
+    <%= will_paginate %>
+    <%= render @words%>
+    <%= will_paginate %>
   </ul>
 </div>

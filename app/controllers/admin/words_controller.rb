@@ -9,7 +9,7 @@ class Admin::WordsController < ApplicationController
         with_category_id: Category.options_for_select
       }
     ) or return
-    @words = @filterrific.find.page params[:page]
+    @words = @filterrific.find.paginate page: params[:page]
     respond_to do |format|
       format.html
       format.js

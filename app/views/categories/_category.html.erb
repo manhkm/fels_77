@@ -1,0 +1,8 @@
+<li>
+  <%= link_to category.name, category %>
+  Has learned (<%= Word.learn_category(current_user,category).count %> / <%= category.words.count %>)
+</br>
+  <% category.words.each do |word| %>
+   	 <%=word.content_jp %>
+  <% end %>
+</li>
