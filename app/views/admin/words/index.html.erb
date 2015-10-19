@@ -1,6 +1,6 @@
 <% provide(:title, t(:all_word))%>
 <% if current_user.admin? %>
-<%= link_to t(:creat_word), admin_words_path, class: "btn btn-lg btn-primary" %>
+<%= link_to t(:creat_word), new_admin_word_path, class: "btn btn-lg btn-primary" %>
 <% end %>
 <h1>All words</h1>
 <%= form_for_filterrific @filterrific do |f| %>

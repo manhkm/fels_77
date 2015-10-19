@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :relationships, only: [:index]
   end
   resources :relationships, only: [:create, :destroy]
-  resources :words
+  resources :words, only: [:index,:show]
   resources :user_words, only: [:create, :destroy]
+  namespace :admin do
+    resources :words
+  end
 end
