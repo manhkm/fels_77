@@ -78,5 +78,4 @@ class User < ActiveRecord::Base
   def learned? word
     return true unless self.user_words.find_by(word_id: word.id).nil?
   end
-
 end
