@@ -1,0 +1,22 @@
+<li class="activity">
+  <%= link_to gravatar_for(lesson.user, size: 50), lesson.user %>
+  <span class="user"><%= link_to lesson.user.username, lesson.user %></span>
+  <span class="content">
+    study <%= pluralize lesson.word_lessons.answer_not_nil.count, "word" %>
+    in <i><%= lesson.category.name %></i>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words lesson.created_at %> ago.  
+  </span>
+</li>
+<li class="activity">
+  <%= link_to gravatar_for(lesson.user, size: 50), lesson.user %>
+  <span class="user"><%= link_to lesson.user.username, lesson.user %></span>
+  <span class="content">
+    study <%= pluralize lesson.word_lessons.answer_not_nil.count, "word" %>
+    in <i><%= lesson.category.name %></i>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words lesson.created_at %> ago.  
+  </span>
+</li>

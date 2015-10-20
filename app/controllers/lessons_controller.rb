@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user
   def show
-    @lesson = Lesson.find params[:id] 
+    @lesson = Lesson.find params[:id]
   end
     
   def create
@@ -22,6 +22,7 @@ class LessonsController < ApplicationController
       redirect_to root_url
     end
   end
+
 
   private
   def params_lesson
