@@ -78,3 +78,6 @@ en:
   sort_by_name: "sort by name"
   category: "Category"
   all_catagories: "all catagories"
+  create_category_success: "Category created"
+  category_deleted: "Category deleted"
+  creat_category: "creat category"

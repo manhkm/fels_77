@@ -8,8 +8,4 @@ class CategoriesController < ApplicationController
     @words = @category.words.paginate page: params[:page]
     @learwords = Word.learn_category(current_user,@category)
   end
-
-  def new
-    @category = Category.new
-  end
 end

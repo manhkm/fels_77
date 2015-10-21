@@ -33,7 +33,7 @@ class Admin::WordsController < ApplicationController
       flash[:success] = t :create_word_success
       redirect_to admin_words_url
     else
-      render 'create'
+      render 'new'
     end
   end
 
@@ -46,6 +46,7 @@ class Admin::WordsController < ApplicationController
   private
   def word_params
     params.require(:word).permit(:content_jp,
+                          :category_id,
                           answers_attributes: [:content, :correct_answer])
   end
 end
