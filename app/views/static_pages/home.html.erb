@@ -11,10 +11,11 @@
     </aside>
     <% if current_user.admin?%>
       <%= link_to t(:word_list), admin_words_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Categories), admin_categories_path, class: "btn btn-lg btn-primary" %>
     <% else %>
       <%= link_to t(:word_list), words_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Categories), categories_path, class: "btn btn-lg btn-primary" %>
     <% end %>
-    <%= link_to t(:Categories), categories_path, class: "btn btn-lg btn-primary" %>
   </div>
 <% else %>
   <div class="center jumbotron">

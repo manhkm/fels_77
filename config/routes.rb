@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :user_words, only: [:create, :destroy]
   namespace :admin do
     resources :words
+    resources :categories
   end
   resources :categories, only: [:index,:show] do
     resources :lessons, only: [:show, :create, :update]
