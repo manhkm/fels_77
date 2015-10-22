@@ -17,9 +17,14 @@
           <%= label(:word, :correct_answer, class: "checkbox inline") do %>
             <%= builder.check_box :correct_answer %>
             <%= label(:word, :correct_answer)%>
-      <% end %>
+          <% end %>
         <% end %>
       </p>
+      <div>
+        Category
+        <%= f.select(:category_id, Category.all.collect {|p| [p.name, p.id] }) %>
+      </div>
+
       <%= f.submit t(:creat_word), class: "btn btn-primary" %>
     <% end %>
   </div>

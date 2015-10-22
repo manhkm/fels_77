@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151019090445) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151019090445) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+
   end
 
   create_table "relationships", force: :cascade do |t|

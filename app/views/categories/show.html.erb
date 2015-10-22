@@ -1,0 +1,17 @@
+<% provide(:title, @category.name) %>
+<div class="row">
+    <section>
+      <h1>
+        <%= @category.name %>
+      </h1>
+      <h2>
+        <%= @category.content %>
+      </h2>
+	    <% if @category.words.any? %>
+        <h3>Has learn (<%= @learwords.count %> / <%= @category.words.count %>)</h3>
+   	   <ol class="words">
+   	     <%= render @words %>
+  	    </ol>
+   		<% end %>
+    </section>
+</div>

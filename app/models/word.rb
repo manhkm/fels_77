@@ -9,4 +9,10 @@ class Word < ActiveRecord::Base
   scope :with_category_id, lambda { |category_ids|
     where(category_id: [*category_ids])
   }
+
+  scope :learn_category, lambda { |user, category|
+      where("id IN (SELECT word_id FROM user_words 
+        WHERE user_id = #{user.id.to_s}) 
+        AND (category_id = #{category.id.to_s})")
+  }
 end
