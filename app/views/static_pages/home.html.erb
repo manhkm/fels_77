@@ -12,11 +12,16 @@
     <% if current_user.admin?%>
       <%= link_to t(:word_list), admin_words_path, class: "btn btn-lg btn-primary" %>
       <%= link_to t(:Categories), admin_categories_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Lessons), admin_lessons_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Result), admin_results_path, class: "btn btn-lg btn-primary" %>
     <% else %>
       <%= link_to t(:word_list), words_path, class: "btn btn-lg btn-primary" %>
       <%= link_to t(:Categories), categories_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Lessons), lessons_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Result),  results_path, class: "btn btn-lg btn-primary" %>
+
     <% end %>
-  </div>
+    </div>
 <% else %>
   <div class="center jumbotron">
     <h1>Welcome to the ELS application</h1>

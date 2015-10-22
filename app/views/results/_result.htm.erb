@@ -1,0 +1,12 @@
+<tr>
+  <td><%= result.word.keyword %></td>
+  <td><%= result.answer.meaning %></td>
+  <td>
+    <% if result.answer.correct_answer? %>
+      <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% else %>
+      <span class="glyphicon glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <% end %>
+  </td>
+  </td>
+</tr>

@@ -1,0 +1,12 @@
+<tr>
+  <td class="result">
+    <div class="content">
+      study <%= pluralize lesson.word_lessons.answer_not_nil.count, "word" %>
+      in <i><%= lesson.category.name %></i>
+    </div>
+    <div class="timestamp">
+      <%= time_ago_in_words lesson.created_at %> ago.  
+    </div>
+  </td>
+  <td><%= link_to "See Result", result_path(lesson.id), class: "btn btn-primary pull-right" %></td>
+</tr>

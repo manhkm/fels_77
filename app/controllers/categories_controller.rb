@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :logged_in_user
+
   def index
     @categories = Category.paginate page: params[:page]
   end
@@ -7,5 +9,6 @@ class CategoriesController < ApplicationController
     @category = Category.find params[:id]
     @words = @category.words.paginate page: params[:page]
     @learwords = Word.learn_category(current_user,@category)
+
   end
 end
