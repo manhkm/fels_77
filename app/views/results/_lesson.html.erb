@@ -1,7 +1,7 @@
 <tr>
   <td class="result">
     <div class="content">
-      study 
+      study <%= pluralize lesson.word_lessons.answer_not_nil.count, "word" %>
       in <i><%= lesson.category.name %></i>
     </div>
     <div class="timestamp">
