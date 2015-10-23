@@ -17,9 +17,8 @@
     <% else %>
       <%= link_to t(:word_list), words_path, class: "btn btn-lg btn-primary" %>
       <%= link_to t(:Categories), categories_path, class: "btn btn-lg btn-primary" %>
-      <%= link_to t(:Lessons), lessons_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to t(:Lessons), lesson_path(@user.id), class: "btn btn-lg btn-primary" %>
       <%= link_to t(:Result),  results_path, class: "btn btn-lg btn-primary" %>
-
     <% end %>
     </div>
 <% else %>
@@ -30,5 +29,4 @@
     </h2>
     <%= link_to t(:signup), signup_path, class: "btn btn-lg btn-primary" %>
   </div>
-
 <% end %>

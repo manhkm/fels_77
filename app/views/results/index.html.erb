@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h2>Activities of <%= current_user.username %></h2>
+    <h2>Activities of <%= current_user.name %></h2>
     <table class="table">
       <%= render partial: "lesson", collection: @lessons %>
     </table>
